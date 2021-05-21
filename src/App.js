@@ -8,6 +8,7 @@ import ButtonComponent from "./components/ButtonComponent"
 import './app.css'
 import alanBtn from '@alan-ai/alan-sdk-web';
 import imageList from "./components/imageList"
+require('dotenv').config()
 
 
 
@@ -49,7 +50,7 @@ function App() {
 useEffect(()=>{
 console.log("component mount");
 alanBtn({ 
-    key: 'f1195403c3044eae88f7c6c290562e1d2e956eca572e1d8b807a3e2338fdd0dc/stage',
+    key:process.env.KEY ,
     onCommand: (commandData) => {
 if(commandData.command === "next"){
   console.log(commandData);
@@ -70,7 +71,7 @@ if(commandData.command === "previous"){
 },[])
 
   
-    console.log(count);
+console.log(process.env.KEY);
  
 
   
